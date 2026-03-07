@@ -30,8 +30,29 @@ for number in numbers:
         print("Target found!")
         break
 
-scores = 68, 42, 57, 78, 35, 62, 50, 92]
+scores = [68, 42, 57, 78, 35, 62, 50, 92]
 total = 0
 count = 0
 
-for score in scores
+for score in scores:
+    if score < 50:
+        continue
+
+    total += score
+    count += 1
+
+avg = total / count if count > 0 else 0
+
+print("Average score for scores above 50: ", avg)
+
+while True:
+    user_input = input("Enter a positive number:")
+
+    if user_input.isnumeric():
+        number = int(user_input)
+
+        if number > 0:
+            break
+    print("Invalid input. Please try again.")
+
+print("You entered a valid positive number ", number)
