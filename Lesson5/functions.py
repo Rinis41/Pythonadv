@@ -6,7 +6,7 @@ greet()
 def greet_person(name):
      print("Hello", name)
 
-greet_person("Agon")
+greet_person("Rinis")
 
 
 def greet_person1(name, greeting= "Hello"):
