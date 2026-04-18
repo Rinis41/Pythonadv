@@ -25,4 +25,3 @@ print("Age: ", student1.get_age())
 
 student1.set_age(18)
 print("Updated age ", student1.get_age())
-r
