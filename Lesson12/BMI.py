@@ -5,29 +5,29 @@ class Person(ABC):
     def __init__(self, name, age, weight, height):
         self.name = name
         self.age = age
-        self.weight = weight
-        self.height = height
+        self._weight = weight
+        self._height = height
 
 
     @property
     def weight(self):
-        return self.weight
+        return self._weight
 
     @weight.setter
     def weight(self, value):
         if value < 0:
             raise ValueError('Weight cannot be negative')
-        self.weight = value
+        self._weight = value
 
     @property
     def height(self):
-        return self.height
+        return self._height
 
     @height.setter
     def height(self, value):
         if value < 0:
             raise ValueError('Height cannot be negative')
-        self.height = value
+        self._height = value
 
     @abstractmethod
     def calculate_bmi(self):
