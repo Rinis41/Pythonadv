@@ -11,4 +11,21 @@ print(filtered_df)
 
 plt.figure(figsize=(14, 8))
 
-bars = plt.bar(filtered_df['country'], filtered_df['Averaqe IQ'], color='skyblue')
+bars = plt.bar(filtered_df['Country'], filtered_df['Averaqe IQ'], color='skyblue')
+
+
+plt.title("Average IQ by country (IQ >=100)", fontsize=16)
+
+plt.xlabel("Country", fontsize=14)
+plt.ylabel("Averaqe IQ", fontsize=14)
+
+plt.xticks(rotation=90, fontsize=10)
+plt.yticks(fontsize=10)
+
+plt.grid(axis='y', lineStyles='--', alpha=0.8)
+
+plt.bar_label(bars, fmt='%.2f', fontsize=10, color='black')
+
+plt.tight_layout()
+
+plt.show()
