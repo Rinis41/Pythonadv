@@ -14,5 +14,21 @@ plt.ylabel('Frequency')
 plt.tight_layout()
 plt.show()
 
-df['Population - 2023']= df['Population - 2023'].str.replace(',' '').astype(float)
+df['Population - 2023']= df['Population - 2023'].str.replace(',', '').astype(float)
 print(df.info())
+
+numeric_iq_data_loc = df.select_dtypes(include=['number'])
+
+sns.heatmap(numeric_iq_data_loc.corr(), annot=True, cmap="coolwarm", fmt=".2f")
+plt.tight_layout()
+plt.show()
+
+
+plt.figure(figsize=(12, 6))
+sns.set_style('darkgrid')
+sns.boxplot(data=df, x="Continent", y="Average IQ")
+plt.title("Boxplot of Average IQ by Continent")
+plt.xlabel("Continent")
+plt.ylabel("Average IQ")
+plt.tight_layout()
+plt.show()
