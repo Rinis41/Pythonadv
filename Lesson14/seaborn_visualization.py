@@ -13,3 +13,6 @@ plt.xlabel('Average IQ')
 plt.ylabel('Frequency')
 plt.tight_layout()
 plt.show()
+
+df['Population - 2023']= df['Population - 2023'].str.replace(',' '').astype(float)
+print(df.info())
