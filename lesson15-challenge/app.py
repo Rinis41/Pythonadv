@@ -48,3 +48,27 @@ plt.ylabel('Temperature (°C)')
 plt.grid(True)
 plt.tight_layout()
 plt.show()
+
+def get_season(month):
+    if month in [12, 1, 2]:
+        return 'Winter'
+    elif month in [3, 4, 5]:
+        return 'Spring'
+    elif month in [6, 7, 8]:
+        return 'Summer'
+    else:
+        return 'Fall'
+
+df['season'] = df['full_date'].dt.month.apply(get_season)
+
+seasonal_temperature = df.groupby('season')['temperature'].mean()
+
+plt.figure(figsize=(10, 6))
+plt.plot(seasonal_temperature.index, seasonal_temperature.values, marker = 'o', linestyle='-', color='skyblue', linewidth=2)
+plt.title('Season Average Temperature')
+plt.xlabel("Season")
+plt.ylabel('Average Temperature (°C)')
+plt.xticks(rotation=0)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.tight_layout()
+plt.show()
