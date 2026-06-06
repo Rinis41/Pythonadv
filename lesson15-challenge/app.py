@@ -32,3 +32,19 @@ plt.xticks(range(1, 13), labels=['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.tight_layout()
 plt.show()
+
+
+hottest_day = df[df["temperature"] == df['temperature'].max()]
+print(f"\n The hottest day recorded:\n{hottest_day}")
+
+Coldest_day = df[df["temperature"] == df['temperature'].min()]
+print(f"\n The coldest day recorded:\n{Coldest_day}")
+
+plt.figure(figsize=(12, 6))
+plt.plot(df['full_date'], df['temperature'])
+plt.title('Temperature Trends')
+plt.xlabel("Date")
+plt.ylabel('Temperature (°C)')
+plt.grid(True)
+plt.tight_layout()
+plt.show()
