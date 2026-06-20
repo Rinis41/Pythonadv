@@ -81,7 +81,7 @@ class BMIApp:
 
         name = st.text_input("Enter name: ")
         age = st.number_input("Enter age: ", min_value= 0, max_value= 120, value=25)
-        weight = st.number_input("Enter weight in kilograms: ", mix_value=0.0, value=70)
+        weight = st.number_input("Enter weight in kilograms: ", min_value=0.0, value=70.0)
         height = st.number_input("enter height in meters: ", min_value=0.0, value=1.75)
 
         if st.button("Add Person"):
@@ -89,7 +89,7 @@ class BMIApp:
                 person = Adult(name, age, weight, height)
             else:
                 person = Child(name, age, weight, height)
-            self.add_person(person)
+            self.add_persons(person)
             st.success(f"{name} has ben added.")
 
     def print_results(self):
@@ -101,3 +101,7 @@ class BMIApp:
         self.collect_user_data()
         if self.people:
             self.print_results()
+
+if __name__ == "__main__":
+    app = BMIApp()
+    app.run()
