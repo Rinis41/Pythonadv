@@ -3,7 +3,7 @@ import streamlit as st
 
 df = pd.DataFrame({
     'Name': ['Alice', 'Bob', 'Charlie'],
-    'Age': [24, 27, 22]
+    'Age': [24, 27, 22],
     'City': ['New York', 'San Francisco', 'Los Angelos']
 })
 
