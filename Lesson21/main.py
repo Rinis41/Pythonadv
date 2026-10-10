@@ -18,7 +18,7 @@ def read_item(item_id: int):
 def get_user(user_id: int):
     return {"user_id": user_id}
 
-@app.get("/items")
+@app.get("/items1")
 def get_item(skip: int = 0, limit: int = 10):
     return {"skip": skip, "limit": limit}
 
@@ -30,6 +30,6 @@ def update_item(item_id: int, name: str, price: float):
 def create_item(name: str, price: float):
     return{"item_name": name, "item_price": price}
 
-app.delete("items/{item_id}")
+@app.delete("/items/{item_id}")
 def delete_item(item_id: int):
     return {"message": f"Item {item_id} deleted"}
