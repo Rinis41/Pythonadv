@@ -32,3 +32,25 @@ rows = cursor.fetchall()
 
 for row in rows:
     print(row)
+
+cursor.execute('''
+UPDATE employees
+SET salary = ?
+WHERE name = ?
+''',('75000.00','Orges Doe')
+
+)
+
+connection.commit()
+
+cursor.execute('''
+DELETE FROM employees
+WHERE name = ?
+
+''',('John Doe',)
+)
+
+connection.commit()
+
+cursor.close()
+connection.close()
